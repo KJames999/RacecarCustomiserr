@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A6A36BB627976BC600308FF1 /* RaceCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B25609279616D200B7B501 /* RaceCar.swift */; };
 		A6B255DC279616A600B7B501 /* RacecarCustomiserrApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B255DB279616A600B7B501 /* RacecarCustomiserrApp.swift */; };
 		A6B255DE279616A600B7B501 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B255DD279616A600B7B501 /* ContentView.swift */; };
 		A6B255E0279616A800B7B501 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6B255DF279616A800B7B501 /* Assets.xcassets */; };
 		A6B255E3279616A800B7B501 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6B255E2279616A800B7B501 /* Preview Assets.xcassets */; };
 		A6B255EE279616A800B7B501 /* RacecarCustomiserrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B255ED279616A800B7B501 /* RacecarCustomiserrTests.swift */; };
 		A6B255F9279616A800B7B501 /* RacecarCustomiserrUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B255F8279616A800B7B501 /* RacecarCustomiserrUITests.swift */; };
+		A6B2560A279616D200B7B501 /* RaceCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B25609279616D200B7B501 /* RaceCar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,7 @@
 		A6B255F4279616A800B7B501 /* RacecarCustomiserrUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RacecarCustomiserrUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6B255F8279616A800B7B501 /* RacecarCustomiserrUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacecarCustomiserrUITests.swift; sourceTree = "<group>"; };
 		A6B255FA279616A800B7B501 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6B25609279616D200B7B501 /* RaceCar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceCar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +103,7 @@
 				A6B255DF279616A800B7B501 /* Assets.xcassets */,
 				A6B255E4279616A800B7B501 /* Info.plist */,
 				A6B255E1279616A800B7B501 /* Preview Content */,
+				A6B25609279616D200B7B501 /* RaceCar.swift */,
 			);
 			path = RacecarCustomiserr;
 			sourceTree = "<group>";
@@ -260,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6B255DE279616A600B7B501 /* ContentView.swift in Sources */,
+				A6B2560A279616D200B7B501 /* RaceCar.swift in Sources */,
 				A6B255DC279616A600B7B501 /* RacecarCustomiserrApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -269,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6B255EE279616A800B7B501 /* RacecarCustomiserrTests.swift in Sources */,
+				A6A36BB627976BC600308FF1 /* RaceCar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

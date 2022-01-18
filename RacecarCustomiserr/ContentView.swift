@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    let car = RaceCar(brand: "Ferrari", model: "911", acceleration: 100.0, handling: 10, topSpeed: 300)
     var body: some View {
-        Text("Hello, world!")
+        Text(car.getDetails())
             .padding()
     }
 }
