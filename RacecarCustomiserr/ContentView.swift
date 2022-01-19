@@ -14,6 +14,21 @@ struct ContentView: View {
     @State private var tiresPackage = false
     @State private var nosPackage = false
     @State private var featherPackage = false
+    @State private var remainingFunds = 1000
+    
+    var exhaustPackageEnabled: Bool {
+        return exhaustPackage ? true : remainingFunds >= 500 ? true : false
+    }
+    var tiresPackageEnabled: Bool {
+        return tiresPackage ? true : remainingFunds >= 500 ? true : false
+    }
+    var nosPackageEnabled: Bool {
+        return nosPackage ? true : remainingFunds >= 500 ? true : false
+    }
+    var featherPackageEnabled: Bool {
+        return featherPackage ? true : remainingFunds >= 500 ? true : false
+    }
+    
     var body: some View {
         let exhaustPackageBinding = Binding<Bool> (
             get : { self.exhaustPackage },
@@ -21,8 +36,10 @@ struct ContentView: View {
                 self.exhaustPackage = newValue
                 if newValue == true {
                     starterCars.car[selectedCar].topSpeed += 5
+                    remainingFunds -= 500
                 } else {
                     starterCars.car[selectedCar].topSpeed -= 5
+                    remainingFunds += 500
                 }
             }
         )
@@ -33,8 +50,10 @@ struct ContentView: View {
                 self.tiresPackage = newValue
                 if newValue == true {
                     starterCars.car[selectedCar].handling += 2
+                    remainingFunds -= 500
                 } else {
                     starterCars.car[selectedCar].handling -= 2
+                    remainingFunds += 500
                 }
             }
 
@@ -46,8 +65,10 @@ struct ContentView: View {
                 self.nosPackage = newValue
                 if newValue == true {
                     starterCars.car[selectedCar].acceleration += 50
+                    remainingFunds -= 500
                 } else {
                     starterCars.car[selectedCar].acceleration -= 50
+                    remainingFunds += 500
                 }
             }
 
@@ -59,8 +80,10 @@ struct ContentView: View {
                 self.featherPackage = newValue
                 if newValue == true {
                     starterCars.car[selectedCar].topSpeed += 10
+                    remainingFunds -= 500
                 } else {
                     starterCars.car[selectedCar].topSpeed -= 10
+                    remainingFunds += 500
                 }
             }
 
@@ -81,10 +104,16 @@ struct ContentView: View {
                 })
                 Section {
                     Toggle("Exhaust Package", isOn: exhaustPackageBinding)
+                        .disabled(!exhaustPackageEnabled)
                     Toggle("Tires Package", isOn: tiresPackageBinding)
+                        .disabled(!tiresPackageEnabled)
                     Toggle("NOS", isOn: nosPackageBinding)
+                        .disabled(!nosPackageEnabled)
                     Toggle("Feather", isOn: featherPackageBinding)
+                        .disabled(!featherPackageEnabled)
                 }
+                Text("remainingFunds: \(remainingFunds)")
+                    .foregroundColor(.red)
             }
         }
     }
