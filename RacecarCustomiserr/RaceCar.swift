@@ -6,7 +6,7 @@
 //
 
 import Foundation
-struct RaceCar {
+struct Car {
     let brand: String
     let model: String
     var acceleration: Double

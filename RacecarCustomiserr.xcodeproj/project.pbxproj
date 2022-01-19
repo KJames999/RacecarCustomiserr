@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A6A36BB627976BC600308FF1 /* RaceCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B25609279616D200B7B501 /* RaceCar.swift */; };
+		A6A36BBB2798A2FE00308FF1 /* starterCars.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A36BBA2798A2FE00308FF1 /* starterCars.swift */; };
 		A6B255DC279616A600B7B501 /* RacecarCustomiserrApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B255DB279616A600B7B501 /* RacecarCustomiserrApp.swift */; };
 		A6B255DE279616A600B7B501 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B255DD279616A600B7B501 /* ContentView.swift */; };
 		A6B255E0279616A800B7B501 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6B255DF279616A800B7B501 /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A6A36BBA2798A2FE00308FF1 /* starterCars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = starterCars.swift; sourceTree = "<group>"; };
 		A6B255D8279616A600B7B501 /* RacecarCustomiserr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RacecarCustomiserr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6B255DB279616A600B7B501 /* RacecarCustomiserrApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacecarCustomiserrApp.swift; sourceTree = "<group>"; };
 		A6B255DD279616A600B7B501 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				A6B255E4279616A800B7B501 /* Info.plist */,
 				A6B255E1279616A800B7B501 /* Preview Content */,
 				A6B25609279616D200B7B501 /* RaceCar.swift */,
+				A6A36BBA2798A2FE00308FF1 /* starterCars.swift */,
 			);
 			path = RacecarCustomiserr;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 			files = (
 				A6B255DE279616A600B7B501 /* ContentView.swift in Sources */,
 				A6B2560A279616D200B7B501 /* RaceCar.swift in Sources */,
+				A6A36BBB2798A2FE00308FF1 /* starterCars.swift in Sources */,
 				A6B255DC279616A600B7B501 /* RacecarCustomiserrApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

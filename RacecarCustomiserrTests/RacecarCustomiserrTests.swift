@@ -10,7 +10,7 @@ import XCTest
 class RacecarCustomiserrTests: XCTestCase {
 
     func testCarWithNewCorrectStats() {
-        let car = RaceCar(brand: "Ferrari", model: "911", acceleration: 100.0, handling: 10, topSpeed: 300)
+        let car = Car(brand: "Ferrari", model: "911", acceleration: 100.0, handling: 10, topSpeed: 300)
         XCTAssertEqual(car.brand, "Ferrari")
         XCTAssertEqual(car.model, "911")
         XCTAssertEqual(car.acceleration, 100.0)
@@ -19,7 +19,7 @@ class RacecarCustomiserrTests: XCTestCase {
     }
     
     func testCarCorrectlyReturnDetails() {
-        let car = RaceCar(brand: "Ferrari", model: "911", acceleration: 100.0, handling: 10, topSpeed: 300)
+        let car = Car(brand: "Ferrari", model: "911", acceleration: 100.0, handling: 10, topSpeed: 300)
         let actual = car.getDetails()
         let expected = """
             Make: Ferrari
