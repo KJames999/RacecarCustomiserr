@@ -15,19 +15,30 @@ struct ContentView: View {
     @State private var nosPackage = false
     @State private var featherPackage = false
     @State private var remainingFunds = 1000
+    @State private var remainingTime = 30
+
+    var timerDone: Bool{
+        if self.remainingTime == 0{
+            return false
+        }else{
+            return true
+        }
+    }
     
-    var exhaustPackageEnabled: Bool {
-        return exhaustPackage ? true : remainingFunds >= 500 ? true : false
+    var exhaustPackageEnabled: Bool{
+        return timerDone ? (exhaustPackage ? true : remainingFunds >= 500 ? true : false) : false
     }
-    var tiresPackageEnabled: Bool {
-        return tiresPackage ? true : remainingFunds >= 500 ? true : false
+    var tiresPackageEnabled: Bool{
+        return timerDone ? (tiresPackage ? true : remainingFunds >= 500 ? true : false) : false
     }
-    var nosPackageEnabled: Bool {
-        return nosPackage ? true : remainingFunds >= 500 ? true : false
+    var nosPackageEnabled: Bool{
+        return timerDone ? (nosPackage ? true : remainingFunds >= 500 ? true : false) : false
     }
-    var featherPackageEnabled: Bool {
-        return featherPackage ? true : remainingFunds >= 500 ? true : false
+    var featherPackageEnabled: Bool{
+        return timerDone ? (featherPackage ? true : remainingFunds == 1000 ? true : false) : false
     }
+
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {
         let exhaustPackageBinding = Binding<Bool> (
@@ -91,9 +102,16 @@ struct ContentView: View {
         
         Form {
             VStack(alignment: .leading, spacing: 20) {
+                Text("\(remainingTime)")
+                .onReceive(timer, perform: { _ in
+                    if self.remainingTime > 0{
+                        self.remainingTime -= 1
+                    }
+                })
                 Text(starterCars.car[selectedCar].getDetails())
                 Button("Random Car", action: {
                     selectedCar = Int.random(in: 0 ..< self.starterCars.car.count)
+                    resetDisplay()
                 })
                 Button("Next Car", action: {
                     if selectedCar == 3 {
@@ -101,7 +119,9 @@ struct ContentView: View {
                     } else {
                         selectedCar += 1
                     }
+                    resetDisplay()
                 })
+                .disabled(!timerDone)
                 Section {
                     Toggle("Exhaust Package", isOn: exhaustPackageBinding)
                         .disabled(!exhaustPackageEnabled)
@@ -112,10 +132,20 @@ struct ContentView: View {
                     Toggle("Feather", isOn: featherPackageBinding)
                         .disabled(!featherPackageEnabled)
                 }
-                Text("remainingFunds: \(remainingFunds)")
-                    .foregroundColor(.red)
+            }
+            Text("remainingFunds: \(remainingFunds)")
+                .foregroundColor(.red)
             }
         }
+        
+        
+    func resetDisplay() {
+        remainingFunds = 1000
+        exhaustPackage = false
+        tiresPackage = false
+        nosPackage = false
+        featherPackage = false
+        starterCars = StarterCars()
     }
 }
 
